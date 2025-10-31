@@ -1,0 +1,12 @@
+# Symlinks to test build
+result
+
+# Test VM image
+nixos.qcow2
+nixos-efi-vars.fd
+
+# Any ISO files
+*.iso
+
+# Output directory (and anything contained within)
+output/
