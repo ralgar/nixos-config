@@ -14,6 +14,7 @@
     hyprlock
     hyprpaper
     jq
+    libfido2
     libnotify
     mako
     mpd
