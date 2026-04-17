@@ -27,6 +27,15 @@
           ./machines/live-iso.nix
         ];
       };
+
+      vm-test-manual = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit dotfiles; };
+        modules = [
+          disko.nixosModules.disko
+          ./machines/vm-test-manual.nix
+        ] ++ nixpkgs.lib.optional (builtins.pathExists ./hardware-configuration.nix) ./hardware-configuration.nix;
+      };
     };
 
     # Aliases for convenience (use with `nix build .#alias`)
