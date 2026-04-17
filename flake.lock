@@ -23,11 +23,11 @@
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1776380086,
-        "narHash": "sha256-WebkxC81svra06x44MXEp0vcG6U57GzQixM3E7l8X1o=",
+        "lastModified": 1776464386,
+        "narHash": "sha256-aobUBnDlwhLBBRk9lW72aO5wMWdr76BrSVs32F3UPqA=",
         "owner": "ralgar",
         "repo": "dotfiles",
-        "rev": "4023f1de5f24c3ee03f81587b7cb3b0b0c51b737",
+        "rev": "7f22d5accee5df1f55fb95cf246543b2e3c4a168",
         "type": "github"
       },
       "original": {

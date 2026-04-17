@@ -59,13 +59,21 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.hyprland.enable = true;
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     enableBashCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
+    histSize = 10000;
+
+    promptInit = ''
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+    '';
   };
+  environment.shells = with pkgs; [ zsh ];  # Configures /etc/shells
+
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
