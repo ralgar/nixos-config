@@ -158,7 +158,7 @@ read -rp "Select configuration (0-$((${#configs[@]} - 1))): " choice
 # Validate and use selection
 if [[ "$choice" =~ ^[0-9]+$ ]] && [ "$choice" -ge 0 ] && [ "$choice" -lt "${#configs[@]}" ]; then
     REF="${configs[$choice]}"
-    echo "Selected: $selected"
+    echo "Selected: $REF"
 else
     echo -e "\nInvalid selection"
     exit 1
