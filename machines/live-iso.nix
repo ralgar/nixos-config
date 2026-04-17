@@ -18,7 +18,7 @@ in
   # Enable flakes in the ISO
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.wireless.enable = false;  # Conflicts with NetworkManager
+  networking.wireless.enable = lib.mkForce false;  # Conflicts with NetworkManager
 
   # Make the ISO bootable
   isoImage.makeEfiBootable = true;
