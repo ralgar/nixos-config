@@ -40,6 +40,7 @@ in
     shopt -s dotglob
     cp -r ${dotfiles}/* /home/nixos/
     chown -R nixos:users /home/nixos
+    chmod -R u+w /home/nixos
   '';
 
   # Copy the config files into the ISO at /etc/nixos, respecting .gitignore
