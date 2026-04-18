@@ -150,4 +150,5 @@
     enable = true;
     defaultEditor = true;
   };
+  environment.variables.SUDO_EDITOR = "nvim";
 }
