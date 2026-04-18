@@ -6,6 +6,7 @@
     ../modules/disko/zfs-root.nix
     ../modules/graphics/base.nix
     ../modules/packages/core.nix
+    ../modules/packages/dev.nix
     ../modules/audio.nix
     ../modules/boot.nix
     ../modules/locale.nix
