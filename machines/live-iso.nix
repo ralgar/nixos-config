@@ -14,7 +14,7 @@ in
   ];
 
   # Set system state version
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 
   networking.wireless.enable = lib.mkForce false;  # Conflicts with NetworkManager
 

@@ -16,7 +16,7 @@
   ];
 
   # Set system state version
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 
   # Disk Setup
   diskSetup.device = "/dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1";
