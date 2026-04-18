@@ -189,4 +189,4 @@ desc="Installing NixOS"
 install_nixos
 
 echo -e "\n${bld}${grn}Installation complete! Remove the USB and reboot.${off}\n"
-yes_or_no "Unmount and reboot now?" reboot_system
+yes_or_no "Unmount and reboot now?" reboot_system ""
