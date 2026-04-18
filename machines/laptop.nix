@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../modules/common.nix
     ../modules/disko/zfs-root.nix
     ../modules/graphics/base.nix
     ../modules/packages/core.nix
@@ -15,9 +16,6 @@
 
   # Set system state version
   system.stateVersion = "25.05";
-
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Disk Setup
   diskSetup.device = "/dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1";

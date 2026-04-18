@@ -6,6 +6,7 @@ in
 {
   imports = [
     "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
+    ../modules/common.nix
     ../modules/packages/core.nix
     ../modules/graphics/base.nix
     ../modules/networking.nix
@@ -14,9 +15,6 @@ in
 
   # Set system state version
   system.stateVersion = "25.05";
-
-  # Enable flakes in the ISO
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.wireless.enable = lib.mkForce false;  # Conflicts with NetworkManager
 
