@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [
     alacritty
     gammastep
+    git
     grim
     hypridle
     hyprlock
