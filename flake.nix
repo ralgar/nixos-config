@@ -30,7 +30,7 @@
     };
 
     # Aliases for convenience (use with `nix build .#alias`)
-    packages.x86_64-linux.test-vm = self.nixosConfigurations.laptop.config.system.build.vmWithDisko;
+    packages.x86_64-linux.laptop-test = self.nixosConfigurations.laptop.config.system.build.vmWithDisko;
     packages.x86_64-linux.live-iso = self.nixosConfigurations.live-iso.config.system.build.isoImage;
   };
 }

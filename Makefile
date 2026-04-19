@@ -18,7 +18,7 @@ init:
 # Build test VM from Nixpkgs Stable channel
 .PHONY: build
 build:
-	sudo nix build .#test-vm
+	sudo nix build .#laptop-test
 
 # Build live ISO from Nixpkgs Stable channel
 .PHONY: iso
