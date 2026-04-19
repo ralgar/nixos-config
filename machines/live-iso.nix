@@ -16,8 +16,6 @@ in
   # Set system state version
   system.stateVersion = "25.11";
 
-  networking.wireless.enable = lib.mkForce false;  # Conflicts with NetworkManager
-
   # Make the ISO bootable
   isoImage.makeEfiBootable = true;
   isoImage.makeUsbBootable = true;
