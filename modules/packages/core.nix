@@ -25,6 +25,8 @@
     zsh-powerlevel10k
   ];
 
+  services.flatpak.enable = true;
+
   programs.firefox = {
     enable = true;
 
