@@ -16,7 +16,7 @@
         specialArgs = { inherit dotfiles; };
         modules = [
           disko.nixosModules.disko
-          ./machines/laptop.nix
+          ./hosts/laptop.nix
         ] ++ nixpkgs.lib.optional (builtins.pathExists ./hardware-configuration.nix) ./hardware-configuration.nix;
       };
 
@@ -24,7 +24,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit dotfiles; };
         modules = [
-          ./machines/live-iso.nix
+          ./hosts/live-iso.nix
         ];
       };
     };
