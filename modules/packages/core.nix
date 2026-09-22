@@ -7,6 +7,7 @@
     alacritty
     gammastep
     git
+    gnupg
     grim
     hypridle
     hyprlock
