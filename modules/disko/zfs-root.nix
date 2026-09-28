@@ -118,5 +118,8 @@
         };
       };
     };
+
+    # Needed for ZFS pool ownership
+    networking.hostId = "e12c75ea";  # FIXME: Don't hardcode this
   };
 }

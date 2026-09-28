@@ -18,7 +18,8 @@
   # Set system state version
   system.stateVersion = "25.11";
 
+  networking.hostName = "laptop";
+
   # Disk Setup
   diskSetup.device = "/dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1";
-  networking.hostId = "e12c75ea";  # Needed for ZFS pool ownership
 }

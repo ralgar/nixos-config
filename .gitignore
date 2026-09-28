@@ -1,9 +1,9 @@
 # Symlinks to test build
 result
 
-# Test VM image
-nixos.qcow2
-nixos-efi-vars.fd
+# Test VM images
+*.qcow2
+*-efi-vars.fd
 
 # Any ISO files
 *.iso
