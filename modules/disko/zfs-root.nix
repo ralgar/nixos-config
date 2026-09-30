@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ config, lib, pkgs, ... }:
 {
   options.diskSetup = {
     device = lib.mkOption {
@@ -35,11 +35,21 @@
                   mountOptions = [ "umask=0077" ];
                 };
               };
-              root = {
+              luks = {
                 size = "100%";
+                label = "luks";
                 content = {
-                  type = "zfs";
-                  pool = config.diskSetup.poolName;
+                  type = "luks";
+                  name = "crypted";
+                  extraFormatArgs = [ "--pbkdf-memory" "2097152" ];
+                  passwordFile = lib.mkIf (config.virtualisation ? qemu) "${pkgs.writeText "luks.key" "password"}";
+                  settings = {
+                    allowDiscards = true;
+                  };
+                  content = {
+                    type = "zfs";
+                    pool = config.diskSetup.poolName;
+                  };
                 };
               };
             };
@@ -60,9 +70,6 @@
             acltype = "posixacl";
             xattr = "sa";
             atime = "off";
-            encryption = "aes-256-gcm";
-            keyformat = "passphrase";
-            keylocation = if (config.virtualisation ? qemu) then "file:///tmp/zfs-key" else "prompt";
             "com.sun:auto-snapshot" = "false";
           };
           datasets = {
@@ -107,14 +114,6 @@
               };
             };
           };
-          # If we're building a test VM, write the password file.
-          preCreateHook = lib.mkIf (config.virtualisation ? qemu) ''
-            echo "password" > /tmp/zfs-key
-          '';
-          # Then switch back to prompt after disk provisioning.
-          postCreateHook = lib.mkIf (config.virtualisation ? qemu) ''
-            zfs set keylocation=prompt ${config.diskSetup.poolName}
-          '';
         };
       };
     };
